@@ -32,8 +32,7 @@ func showMenu() {
             
             try selectMenuChoice(optionInEnum)
         } catch MenuErrorType.invalidOption {
-            print("\nEi! O que você digitou não é uma opção válida :(")
-            print("Digite novamente uma opção:")
+           handleInvalidOption()
         } catch {
             print("Erro ao iniciar MenuChoicesEnum")
         }
