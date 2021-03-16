@@ -17,17 +17,20 @@ func showMenu() {
         itemIndex += 1
     }
     
-    while true {
         print("\nDigite o que deseja fazer:")
+    while true {
         let optionNumber = Int(readLine() ?? "-1")
         do {
             let optionInEnum: MenuChoicesEnum = try MenuChoicesEnum.init(choiceNumber: optionNumber ?? -1)
             if optionInEnum == MenuChoicesEnum.Sair {
+                clearTerminal()
+                print("Obrigado por usar a BuyTunes!")
+                print("Volte sempre!\n")
                 return
             }
         } catch MenuErrorType.invalidOption {
-            clearTerminal()
-            print("\nEscolha uma opção válida!")
+            print("\nEi! O que você digitou não é uma opção válida :(")
+            print("Digite uma das quatro opçoes mostradas no menu!")
         } catch {
             print("Erro ao iniciar MenuChoicesEnum")
         }
