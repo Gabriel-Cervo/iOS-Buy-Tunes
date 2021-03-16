@@ -33,7 +33,7 @@ func showMenu() {
             try selectMenuChoice(optionInEnum)
         } catch MenuErrorType.invalidOption {
             print("\nEi! O que você digitou não é uma opção válida :(")
-            print("Digite uma das quatro opçoes mostradas no menu!")
+            print("Digite novamente uma opção:")
         } catch {
             print("Erro ao iniciar MenuChoicesEnum")
         }
@@ -45,7 +45,7 @@ func selectMenuChoice(_ selectedOption: MenuChoices) throws {
     case .Comprar:
         handleBuy()
     case .Procurar:
-        handleSearch()
+        try handleSearch()
     case .Listar_Compras:
         handleListPurchases()
     default:

@@ -30,14 +30,17 @@ enum MenuChoices: String, CaseIterable {
 }
 
 enum SearchChoices: String, CaseIterable {
+    case Voltar
     case Por_Artistas
     case Ver_Todas
     
     init(choiceNumber: Int) throws {
         switch choiceNumber {
         case 0:
-            self = .Por_Artistas
+            self = .Voltar
         case 1:
+            self = .Por_Artistas
+        case 2:
             self = .Ver_Todas
         default:
             throw MenuErrorType.invalidOption

@@ -16,7 +16,7 @@ func handleBuy() {
     // logica para verificar
 }
 
-func handleSearch() {
+func handleSearch() throws {
     clearTerminal()
     
     print("Como deseja procurar sua música?")
@@ -27,8 +27,12 @@ func handleSearch() {
         optionIndex += 1
     }
     
-//    let optionNumber = Int(readLine() ?? "-1")
-//    let optionInEnum: SearchChoices = try SearchChoices.init(choiceNumber: optionNumber ?? -1)
+    let optionNumber = Int(readLine() ?? "-1")
+    do {
+        let optionInEnum: SearchChoices = try SearchChoices.init(choiceNumber: optionNumber ?? -1)
+    } catch {
+        throw error
+    }
 }
 
 func handleListPurchases() {
