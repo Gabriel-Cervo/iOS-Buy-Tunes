@@ -19,8 +19,9 @@ func handleBuy() {
 func handleSearch() throws {
     clearTerminal()
     
-    print("Como deseja procurar sua música?")
     while true {
+        print("\nComo deseja procurar sua música?")
+        
         var optionIndex: Int = 0
         for option in SearchChoices.allCases {
             let optionWithoutUnderlines: String = option.rawValue.removeUnderlines()

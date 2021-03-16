@@ -9,17 +9,17 @@ import Foundation
 
 func showMenu() {
     print("Seja bem vindo a BuyTunes!\n")
-    print("---- MENU ----")
-    
-    var optionIndex: Int = 0
-    for option in MenuChoices.allCases {
-        let optionWithoutUnderlines: String = option.rawValue.removeUnderlines()
-        print("\(optionIndex): \(optionWithoutUnderlines)")
-        optionIndex += 1
-    }
-    
-    print("\nDigite o que deseja fazer:")
     while true {
+        print("\n---- MENU ----\n")
+        
+        var optionIndex: Int = 0
+        for option in MenuChoices.allCases {
+            let optionWithoutUnderlines: String = option.rawValue.removeUnderlines()
+            print("\(optionIndex): \(optionWithoutUnderlines)")
+            optionIndex += 1
+        }
+        
+        print("\nDigite o que deseja fazer:")
         let optionNumber = Int(readLine() ?? "-1")
         do {
             let optionInEnum: MenuChoices = try MenuChoices.init(choiceNumber: optionNumber ?? -1)
@@ -29,10 +29,10 @@ func showMenu() {
                 print("Volte sempre!\n")
                 return
             }
-            
+                
             try selectMenuChoice(optionInEnum)
         } catch MenuErrorType.invalidOption {
-           handleInvalidOption()
+            handleInvalidOption()
         } catch {
             handleGeneralError(of: error)
         }
