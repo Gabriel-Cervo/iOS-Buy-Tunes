@@ -11,23 +11,26 @@ func showMenu() {
     print("Seja bem vindo a BuyTunes!\n")
     print("---- MENU ----")
     
-    var itemIndex: Int = 0
-    for option in MenuChoicesEnum.allCases {
-        print("\(itemIndex): \(option)")
-        itemIndex += 1
+    var optionIndex: Int = 0
+    for option in MenuChoices.allCases {
+        let optionWithoutUnderlines: String = option.rawValue.removeUnderlines()
+        print("\(optionIndex): \(optionWithoutUnderlines)")
+        optionIndex += 1
     }
     
     print("\nDigite o que deseja fazer:")
     while true {
         let optionNumber = Int(readLine() ?? "-1")
         do {
-            let optionInEnum: MenuChoicesEnum = try MenuChoicesEnum.init(choiceNumber: optionNumber ?? -1)
-            if optionInEnum == MenuChoicesEnum.Sair {
+            let optionInEnum: MenuChoices = try MenuChoices.init(choiceNumber: optionNumber ?? -1)
+            if optionInEnum == MenuChoices.Sair {
                 clearTerminal()
                 print("Obrigado por usar a BuyTunes!")
                 print("Volte sempre!\n")
                 return
             }
+            
+            try selectMenuChoice(optionInEnum)
         } catch MenuErrorType.invalidOption {
             print("\nEi! O que você digitou não é uma opção válida :(")
             print("Digite uma das quatro opçoes mostradas no menu!")
@@ -36,3 +39,17 @@ func showMenu() {
         }
     }
 }
+
+func selectMenuChoice(_ selectedOption: MenuChoices) throws {
+    switch selectedOption {
+    case .Comprar:
+        handleBuy()
+    case .Procurar:
+        handleSearch()
+    case .Listar_Compras:
+        handleListPurchases()
+    default:
+        throw MenuErrorType.invalidOption
+    }
+}
+

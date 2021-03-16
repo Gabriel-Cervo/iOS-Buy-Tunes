@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum MenuChoicesEnum: CaseIterable {
+enum MenuChoices: String, CaseIterable {
     case Sair
     case Comprar
     case Procurar
@@ -23,6 +23,22 @@ enum MenuChoicesEnum: CaseIterable {
             self = .Procurar
         case 3:
             self = .Listar_Compras
+        default:
+            throw MenuErrorType.invalidOption
+        }
+    }
+}
+
+enum SearchChoices: String, CaseIterable {
+    case Por_Artistas
+    case Ver_Todas
+    
+    init(choiceNumber: Int) throws {
+        switch choiceNumber {
+        case 0:
+            self = .Por_Artistas
+        case 1:
+            self = .Ver_Todas
         default:
             throw MenuErrorType.invalidOption
         }
