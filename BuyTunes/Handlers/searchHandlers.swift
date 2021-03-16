@@ -32,11 +32,15 @@ func handleSearch() throws {
         let optionNumber = Int(readLine() ?? "-1")
         do {
             let optionInEnum: SearchChoices = try SearchChoices.init(choiceNumber: optionNumber ?? -1)
-            if optionInEnum == SearchChoices.Voltar {
+            switch optionInEnum {
+            case .Voltar:
                 clearTerminal()
                 return
+            case .Por_Artistas:
+                handleArtistSearch()
+            case .Ver_Todas:
+                handleAllMusicsSearch()
             }
-            
         } catch MenuErrorType.invalidOption {
             handleInvalidOption()
         }
@@ -44,5 +48,13 @@ func handleSearch() throws {
 }
 
 func handleListPurchases() {
-    
+    // mostrar todas as musicas ja compradas
+}
+
+func handleArtistSearch() {
+    // pesquisa pelo nome do artista
+}
+
+func handleAllMusicsSearch() {
+    // mostrar todas as musicas
 }
