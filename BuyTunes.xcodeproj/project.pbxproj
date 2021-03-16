@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		890FC56A26012D9700D291D8 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890FC56926012D9700D291D8 /* main.swift */; };
+		8956CE2C260139E0006A0FB7 /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8956CE2B260139E0006A0FB7 /* Song.swift */; };
+		8956CE2F26013A20006A0FB7 /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8956CE2E26013A20006A0FB7 /* Artist.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +27,8 @@
 /* Begin PBXFileReference section */
 		890FC56626012D9700D291D8 /* BuyTunes */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = BuyTunes; sourceTree = BUILT_PRODUCTS_DIR; };
 		890FC56926012D9700D291D8 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		8956CE2B260139E0006A0FB7 /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
+		8956CE2E26013A20006A0FB7 /* Artist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,9 +61,19 @@
 		890FC56826012D9700D291D8 /* BuyTunes */ = {
 			isa = PBXGroup;
 			children = (
+				8956CE2A26013970006A0FB7 /* Models */,
 				890FC56926012D9700D291D8 /* main.swift */,
 			);
 			path = BuyTunes;
+			sourceTree = "<group>";
+		};
+		8956CE2A26013970006A0FB7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8956CE2B260139E0006A0FB7 /* Song.swift */,
+				8956CE2E26013A20006A0FB7 /* Artist.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -119,6 +133,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8956CE2F26013A20006A0FB7 /* Artist.swift in Sources */,
+				8956CE2C260139E0006A0FB7 /* Song.swift in Sources */,
 				890FC56A26012D9700D291D8 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
