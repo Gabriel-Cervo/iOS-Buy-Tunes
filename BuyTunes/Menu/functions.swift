@@ -17,13 +17,19 @@ func showMenu() {
         itemIndex += 1
     }
     
-    print("\nDigite o que deseja fazer:")
-    let optionNumber = Int(readLine() ?? "-1")
-    do {
-        let optionInEnum = try MenuChoicesEnum.init(choiceNumber: optionNumber ?? -1)
-    } catch MenuErrorType.invalidOption {
-        print("\nEscolha uma opção válida!\n")
-    } catch {
-        print("Erro ao chamar MenuChoicesEnum")
+    while true {
+        print("\nDigite o que deseja fazer:")
+        let optionNumber = Int(readLine() ?? "-1")
+        do {
+            let optionInEnum: MenuChoicesEnum = try MenuChoicesEnum.init(choiceNumber: optionNumber ?? -1)
+            if optionInEnum == MenuChoicesEnum.Sair {
+                return
+            }
+        } catch MenuErrorType.invalidOption {
+            clearTerminal()
+            print("\nEscolha uma opção válida!")
+        } catch {
+            print("Erro ao iniciar MenuChoicesEnum")
+        }
     }
 }
