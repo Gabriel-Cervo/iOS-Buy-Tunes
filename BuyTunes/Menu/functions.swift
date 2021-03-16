@@ -34,7 +34,7 @@ func showMenu() {
         } catch MenuErrorType.invalidOption {
            handleInvalidOption()
         } catch {
-            print("Erro ao iniciar MenuChoicesEnum")
+            handleGeneralError(of: error)
         }
     }
 }
