@@ -17,7 +17,7 @@ func showMenu() {
         itemIndex += 1
     }
     
-        print("\nDigite o que deseja fazer:")
+    print("\nDigite o que deseja fazer:")
     while true {
         let optionNumber = Int(readLine() ?? "-1")
         do {

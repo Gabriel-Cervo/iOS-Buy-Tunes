@@ -67,7 +67,6 @@
 		890FC55D26012D9700D291D8 = {
 			isa = PBXGroup;
 			children = (
-				84C0DBB82601416A00E76591 /* Shared */,
 				890FC56826012D9700D291D8 /* BuyTunes */,
 				890FC56726012D9700D291D8 /* Products */,
 			);
@@ -84,6 +83,7 @@
 		890FC56826012D9700D291D8 /* BuyTunes */ = {
 			isa = PBXGroup;
 			children = (
+				84C0DBB82601416A00E76591 /* Shared */,
 				890FC56926012D9700D291D8 /* main.swift */,
 				84C0DBAC2601391A00E76591 /* Menu */,
 			);
