@@ -7,12 +7,6 @@
 
 import Foundation
 
-//func printList (_ list: Array<Printable>) {
-//    for item in list {
-//        print(item.description)
-//    }
-//}
-
 var date = DateComponents(calendar: .current, year: 2021, month: 3, day: 16, hour: 15, minute: 30, second: 12).date!
 
 var adele = Artist(name: "Adele", about: "idk")
@@ -26,22 +20,7 @@ taylor.addSong(title: "ME!", releaseDate: date, price: 2.99)
 taylor.addSong(title: "Love story", releaseDate: date, price: 2.99)
 Library.sharedInstance.songsAvaliable.append(contentsOf: taylor.songs)
 
-
 let artists = [adele, taylor]
 Artists.sharedInstance.artistsAvaliable = artists
 
-
-//artists.forEach { artist in
-//    print(artist.name)
-//    printList(artist.songs)
-//}
-
-try? Library.sharedInstance.buyMusic("Rolling in the Deep")
-//print("Songs Avaliable: \(Cart.sharedInstance.songsAvaliable)")
-//print("Songs purchased: \(Cart.sharedInstance.songsPurchased)")
-
-
 showMenu()
-// handleListPurchases()
-//handleArtistSearch()
-//print(try? Artists.sharedInstance.getArtist("taylor swift"))
