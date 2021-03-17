@@ -16,8 +16,8 @@ struct Artist: Printable {
         return name
     }
     
-    mutating func addSong(title: String, releaseDate: Date, price: Double) {
-        let newSong = Song(artist: self, title: title, releaseDate: releaseDate, price: price)
+    mutating func addSong(title: String, price: Double) {
+        let newSong = Song(artist: self, title: title, price: price)
         songs.append(newSong)
     }
 }

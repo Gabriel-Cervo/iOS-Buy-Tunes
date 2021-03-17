@@ -19,6 +19,8 @@
 		84C0DBC32601499D00E76591 /* removeUnderlines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C0DBC22601499D00E76591 /* removeUnderlines.swift */; };
 		84C0DBC72601528E00E76591 /* errorHandlers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C0DBC62601528E00E76591 /* errorHandlers.swift */; };
 		890FC56A26012D9700D291D8 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890FC56926012D9700D291D8 /* main.swift */; };
+		892A09C9260293A100FCD289 /* getRandomDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892A09C8260293A100FCD289 /* getRandomDate.swift */; };
+		892A09D02602C0FB00FCD289 /* readLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892A09CF2602C0FB00FCD289 /* readLine.swift */; };
 		8956CE2C260139E0006A0FB7 /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8956CE2B260139E0006A0FB7 /* Song.swift */; };
 		8956CE2F26013A20006A0FB7 /* ArtistModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8956CE2E26013A20006A0FB7 /* ArtistModel.swift */; };
 		8956CE33260144D1006A0FB7 /* PrintableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8956CE32260144D1006A0FB7 /* PrintableProtocol.swift */; };
@@ -50,6 +52,8 @@
 		84C0DBC62601528E00E76591 /* errorHandlers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = errorHandlers.swift; sourceTree = "<group>"; };
 		890FC56626012D9700D291D8 /* BuyTunes */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = BuyTunes; sourceTree = BUILT_PRODUCTS_DIR; };
 		890FC56926012D9700D291D8 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		892A09C8260293A100FCD289 /* getRandomDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getRandomDate.swift; sourceTree = "<group>"; };
+		892A09CF2602C0FB00FCD289 /* readLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = readLine.swift; sourceTree = "<group>"; };
 		8956CE2B260139E0006A0FB7 /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
 		8956CE2E26013A20006A0FB7 /* ArtistModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistModel.swift; sourceTree = "<group>"; };
 		8956CE32260144D1006A0FB7 /* PrintableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrintableProtocol.swift; sourceTree = "<group>"; };
@@ -90,6 +94,8 @@
 			children = (
 				84C0DBB92601417400E76591 /* clearTerminal.swift */,
 				84C0DBC22601499D00E76591 /* removeUnderlines.swift */,
+				892A09C8260293A100FCD289 /* getRandomDate.swift */,
+				892A09CF2602C0FB00FCD289 /* readLine.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -219,9 +225,11 @@
 				84B94452260282D700D40A39 /* LibraryErrorType.swift in Sources */,
 				84C0DBAA2601390A00E76591 /* functions.swift in Sources */,
 				84C0DBAF2601395900E76591 /* choicesEnum.swift in Sources */,
+				892A09D02602C0FB00FCD289 /* readLine.swift in Sources */,
 				84B9444D26027F1400D40A39 /* Library.swift in Sources */,
 				84C0DBB526013A4300E76591 /* MenuErrorType.swift in Sources */,
 				890FC56A26012D9700D291D8 /* main.swift in Sources */,
+				892A09C9260293A100FCD289 /* getRandomDate.swift in Sources */,
 				84C0DBC02601460E00E76591 /* searchHandlers.swift in Sources */,
 				84C0DBBA2601417400E76591 /* clearTerminal.swift in Sources */,
 			);
@@ -349,7 +357,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8HS35WKYD8;
+				DEVELOPMENT_TEAM = 7UW5874D4F;
 				ENABLE_HARDENED_RUNTIME = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -360,7 +368,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8HS35WKYD8;
+				DEVELOPMENT_TEAM = 7UW5874D4F;
 				ENABLE_HARDENED_RUNTIME = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

@@ -10,7 +10,7 @@ import Foundation
 struct Song: Printable {
     let artist: Artist
     let title: String
-    let releaseDate: Date
+    let releaseDate: Date = getRandomDate()
     let price: Double
     
     var description: String {

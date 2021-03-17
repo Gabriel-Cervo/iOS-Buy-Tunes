@@ -9,9 +9,10 @@ import Foundation
 
 struct Library {
     static var sharedInstance = Library()
+    
     var songsAvaliable: [Song] = [Song]()
     var songsPurchased: [Song] = [Song]()
-        
+    
     mutating func buyMusic(_ musicToBuy: String) throws {
         if let musicToBuyIndex = songsAvaliable.firstIndex(where: { $0.title.lowercased() == musicToBuy.lowercased() }) {
             let music = songsAvaliable[musicToBuyIndex]
