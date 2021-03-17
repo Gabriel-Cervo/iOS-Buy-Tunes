@@ -13,7 +13,17 @@ func handleBuy() {
     print("Você deseja comprar uma música? Que ótimo!!!")
     print("Digite o nome da música que deseja comprar:")
     let songToBePurchased: String = readLine() ?? ""
-    // logica para verificar
+    do {
+        try Cart.sharedInstance.buyMusic(songToBePurchased)
+        
+        clearTerminal()
+        
+        print("Compra realizada com sucesso!")
+    } catch CartErrorType.MusicNotFound {        
+        handleInvalidMusic()
+    } catch {
+        handleGeneralError(of: error)
+    }
 }
 
 func handleSearch() throws {

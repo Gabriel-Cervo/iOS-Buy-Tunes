@@ -13,7 +13,7 @@ struct Artist: Printable {
     var songs: Array<Song> = [Song]()
     
     var description: String {
-        return name + "is a music artist" // TODO pensar em uma desc melhor (personalizada)
+        return name
     }
     
     mutating func addSong(title: String, releaseDate: Date, price: Double) {
