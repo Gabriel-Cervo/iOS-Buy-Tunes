@@ -12,6 +12,7 @@ func handleBuy() {
     
     print("Você deseja comprar uma música? Que ótimo!!!")
     print("Digite o nome da música que deseja comprar:")
+    
     let songToBePurchased: String = readLine() ?? ""
     do {
         try Cart.sharedInstance.buyMusic(songToBePurchased)
@@ -58,7 +59,12 @@ func handleSearch() throws {
 }
 
 func handleListPurchases() {
-    // mostrar todas as musicas ja compradas
+    let musicsPurchased = Cart.sharedInstance.songsPurchased
+    
+    clearTerminal()
+    print("---- Suas músicas ---- ")
+    
+    musicsPurchased.forEach { print($0.description) }
 }
 
 func handleArtistSearch() {

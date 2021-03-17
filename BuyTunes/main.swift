@@ -32,9 +32,10 @@ let artists = [adele, taylor]
 //    printList(artist.songs)
 //}
 
-//try? Cart.sharedInstance.buyMusic("Rolling in the Deep")
+try? Cart.sharedInstance.buyMusic("Rolling in the Deep")
 //print("Songs Avaliable: \(Cart.sharedInstance.songsAvaliable)")
 //print("Songs purchased: \(Cart.sharedInstance.songsPurchased)")
 
 
-showMenu()
+//showMenu()
+handleListPurchases()
