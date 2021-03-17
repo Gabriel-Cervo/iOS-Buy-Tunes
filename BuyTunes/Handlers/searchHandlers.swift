@@ -40,7 +40,7 @@ func handleSearch() {
             optionIndex += 1
         }
         
-        let optionNumber = Int(readLine() ?? "-1")
+        let optionNumber: Int? = Int(readLine() ?? "-1")
         do {
             let optionInEnum: SearchChoices = try SearchChoices.init(choiceNumber: optionNumber ?? -1)
             switch optionInEnum {
@@ -74,7 +74,7 @@ func handleArtistSearch() {
             optionIndex += 1
         }
         
-        let optionNumber = Int(readLine() ?? "-1")
+        let optionNumber: Int? = Int(readLine() ?? "-1")
         do {
             let optionInEnum: ArtistSearchChoices = try ArtistSearchChoices.init(choiceNumber: optionNumber ?? -1)
             switch optionInEnum {
