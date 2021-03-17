@@ -30,3 +30,5 @@ artists.forEach { artist in
     print(artist.name)
     printList(artist.songs)
 }
+
+showMenu()
