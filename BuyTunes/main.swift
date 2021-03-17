@@ -28,6 +28,8 @@ Library.sharedInstance.songsAvaliable.append(contentsOf: taylor.songs)
 
 
 let artists = [adele, taylor]
+Artists.sharedInstance.artistsAvaliable = artists
+
 
 //artists.forEach { artist in
 //    print(artist.name)
@@ -40,5 +42,6 @@ try? Library.sharedInstance.buyMusic("Rolling in the Deep")
 
 
 //showMenu()
- handleListPurchases()
+// handleListPurchases()
 //handleArtistSearch()
+print(try? Artists.sharedInstance.getArtist("taylor swift"))
