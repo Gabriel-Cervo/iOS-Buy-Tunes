@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Artist: Printable {
+struct Artist: Printable {    
     let name: String
     let about: String
     var songs: Array<Song> = [Song]()
@@ -17,7 +17,7 @@ struct Artist: Printable {
     }
     
     mutating func addSong(title: String, releaseDate: Date, price: Double) {
-        let newSong = Song(title: title, artist: self, releaseDate: releaseDate, price: price)
+        let newSong = Song(artist: self, title: title, releaseDate: releaseDate, price: price)
         songs.append(newSong)
     }
 }

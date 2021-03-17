@@ -7,8 +7,8 @@
 
 import Foundation
 
-class Cart {
-    static let sharedInstance = Cart()    
+class Library {
+    static let sharedInstance = Library()
     var songsAvaliable: [Song] = [Song]()
     var songsPurchased: [Song] = [Song]()
     
@@ -20,7 +20,7 @@ class Cart {
             songsPurchased.append(music)
             songsAvaliable.remove(at: musicToBuyIndex)
         } else {
-            throw CartErrorType.MusicNotFound
+            throw LibraryErrorType.MusicNotFound
         }
     }
 }

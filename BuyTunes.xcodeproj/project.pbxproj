@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		84B9444D26027F1400D40A39 /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B9444C26027F1400D40A39 /* Cart.swift */; };
-		84B94452260282D700D40A39 /* CartErrorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B94451260282D700D40A39 /* CartErrorType.swift */; };
+		84B94452260282D700D40A39 /* LibraryErrorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B94451260282D700D40A39 /* LibraryErrorType.swift */; };
 		84C0DBAA2601390A00E76591 /* functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C0DBA92601390A00E76591 /* functions.swift */; };
 		84C0DBAF2601395900E76591 /* choicesEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C0DBAE2601395900E76591 /* choicesEnum.swift */; };
 		84C0DBB526013A4300E76591 /* MenuErrorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C0DBB426013A4300E76591 /* MenuErrorType.swift */; };
@@ -36,7 +36,7 @@
 
 /* Begin PBXFileReference section */
 		84B9444C26027F1400D40A39 /* Cart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cart.swift; sourceTree = "<group>"; };
-		84B94451260282D700D40A39 /* CartErrorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartErrorType.swift; sourceTree = "<group>"; };
+		84B94451260282D700D40A39 /* LibraryErrorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryErrorType.swift; sourceTree = "<group>"; };
 		84C0DBA92601390A00E76591 /* functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = functions.swift; sourceTree = "<group>"; };
 		84C0DBAE2601395900E76591 /* choicesEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = choicesEnum.swift; sourceTree = "<group>"; };
 		84C0DBB426013A4300E76591 /* MenuErrorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuErrorType.swift; sourceTree = "<group>"; };
@@ -66,7 +66,7 @@
 			isa = PBXGroup;
 			children = (
 				84C0DBB426013A4300E76591 /* MenuErrorType.swift */,
-				84B94451260282D700D40A39 /* CartErrorType.swift */,
+				84B94451260282D700D40A39 /* LibraryErrorType.swift */,
 			);
 			path = Errors;
 			sourceTree = "<group>";
@@ -208,7 +208,7 @@
 				8956CE2C260139E0006A0FB7 /* Song.swift in Sources */,
 				84C0DBC32601499D00E76591 /* removeUnderlines.swift in Sources */,
 				84C0DBC72601528E00E76591 /* errorHandlers.swift in Sources */,
-				84B94452260282D700D40A39 /* CartErrorType.swift in Sources */,
+				84B94452260282D700D40A39 /* LibraryErrorType.swift in Sources */,
 				84C0DBAA2601390A00E76591 /* functions.swift in Sources */,
 				84C0DBAF2601395900E76591 /* choicesEnum.swift in Sources */,
 				84B9444D26027F1400D40A39 /* Cart.swift in Sources */,

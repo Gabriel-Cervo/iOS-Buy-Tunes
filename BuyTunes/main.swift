@@ -20,10 +20,12 @@ var taylor = Artist(name: "Taylor Swift", about: "helpp")
 
 adele.addSong(title: "Rolling in the Deep", releaseDate: date, price: 2.99)
 adele.addSong(title: "Set fire to the rain", releaseDate: date, price: 2.99)
-Cart.sharedInstance.songsAvaliable.append(contentsOf: adele.songs)
+Library.sharedInstance.songsAvaliable.append(contentsOf: adele.songs)
 
 taylor.addSong(title: "ME!", releaseDate: date, price: 2.99)
 taylor.addSong(title: "Love story", releaseDate: date, price: 2.99)
+Library.sharedInstance.songsAvaliable.append(contentsOf: taylor.songs)
+
 
 let artists = [adele, taylor]
 
@@ -32,10 +34,11 @@ let artists = [adele, taylor]
 //    printList(artist.songs)
 //}
 
-try? Cart.sharedInstance.buyMusic("Rolling in the Deep")
+try? Library.sharedInstance.buyMusic("Rolling in the Deep")
 //print("Songs Avaliable: \(Cart.sharedInstance.songsAvaliable)")
 //print("Songs purchased: \(Cart.sharedInstance.songsPurchased)")
 
 
 //showMenu()
-handleListPurchases()
+ handleListPurchases()
+//handleArtistSearch()

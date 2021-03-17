@@ -15,12 +15,12 @@ func handleBuy() {
     
     let songToBePurchased: String = readLine() ?? ""
     do {
-        try Cart.sharedInstance.buyMusic(songToBePurchased)
+        try Library.sharedInstance.buyMusic(songToBePurchased)
         
         clearTerminal()
         
         print("Compra realizada com sucesso!")
-    } catch CartErrorType.MusicNotFound {        
+    } catch LibraryErrorType.MusicNotFound {
         handleInvalidMusic()
     } catch {
         handleGeneralError(of: error)
@@ -60,15 +60,17 @@ func handleSearch() throws {
 
 
 func handleArtistSearch() {
-    // pesquisa pelo nome do artista
-}
+    clearTerminal()
+    print("---- Artistas Disponiveis ---- ")
+    
+    artists.forEach { print($0.description) }}
 
 func handleAllMusicsSearch() {
     // mostrar todas as musicas
 }
 
 func handleListPurchases() {
-    let musicsPurchased = Cart.sharedInstance.songsPurchased
+    let musicsPurchased = Library.sharedInstance.songsPurchased
     
     clearTerminal()
     print("---- Suas músicas ---- ")

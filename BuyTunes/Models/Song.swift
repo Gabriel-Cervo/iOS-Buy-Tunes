@@ -8,8 +8,8 @@
 import Foundation
 
 struct Song: Printable {
-    let title: String
     let artist: Artist
+    let title: String
     let releaseDate: Date
     let price: Double
     

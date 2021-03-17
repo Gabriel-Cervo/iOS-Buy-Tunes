@@ -7,6 +7,6 @@
 
 import Foundation
 
-enum CartErrorType: Error {
+enum LibraryErrorType: Error {
     case MusicNotFound
 }
