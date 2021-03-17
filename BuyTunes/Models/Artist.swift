@@ -13,10 +13,11 @@ struct Artist: Printable {
     var songs: Array<Song> = [Song]()
     
     var description: String {
-        return name
+        return name + "is a music artist" // TODO pensar em uma desc melhor (personalizada)
     }
     
-    mutating func addSong (title: String, releaseDate: Date, price: Double) {
-        songs.append(Song(title: title, artist: self, releaseDate: releaseDate, price: price))
+    mutating func addSong(title: String, releaseDate: Date, price: Double) {
+        let newSong = Song(title: title, artist: self, releaseDate: releaseDate, price: price)
+        songs.append(newSong)
     }
 }
