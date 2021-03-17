@@ -19,7 +19,7 @@ func handleBuy() {
         
         clearTerminal()
         
-        print("Compra realizada com sucesso!")
+        print("Você comprou '\(songToBePurchased)' com sucesso!")
     } catch LibraryErrorType.MusicNotFound {
         handleInvalidMusic()
     } catch {
