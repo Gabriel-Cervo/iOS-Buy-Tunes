@@ -44,7 +44,7 @@ func selectMenuChoice(_ selectedOption: MenuChoices) throws {
     case .Comprar:
         handleBuy()
     case .Procurar:
-        try handleSearch()
+        handleSearch()
     case .Listar_Compras:
         handleListPurchases()
     default:

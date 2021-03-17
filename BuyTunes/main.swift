@@ -41,7 +41,7 @@ try? Library.sharedInstance.buyMusic("Rolling in the Deep")
 //print("Songs purchased: \(Cart.sharedInstance.songsPurchased)")
 
 
-//showMenu()
+showMenu()
 // handleListPurchases()
 //handleArtistSearch()
-print(try? Artists.sharedInstance.getArtist("taylor swift"))
+//print(try? Artists.sharedInstance.getArtist("taylor swift"))
