@@ -58,14 +58,6 @@ func handleSearch() throws {
     }
 }
 
-func handleListPurchases() {
-    let musicsPurchased = Cart.sharedInstance.songsPurchased
-    
-    clearTerminal()
-    print("---- Suas músicas ---- ")
-    
-    musicsPurchased.forEach { print($0.description) }
-}
 
 func handleArtistSearch() {
     // pesquisa pelo nome do artista
@@ -73,4 +65,13 @@ func handleArtistSearch() {
 
 func handleAllMusicsSearch() {
     // mostrar todas as musicas
+}
+
+func handleListPurchases() {
+    let musicsPurchased = Cart.sharedInstance.songsPurchased
+    
+    clearTerminal()
+    print("---- Suas músicas ---- ")
+    
+    musicsPurchased.forEach { print($0.description) }
 }
