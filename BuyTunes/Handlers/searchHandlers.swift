@@ -61,12 +61,15 @@ func handleSearch() throws {
 
 func handleArtistSearch() {
     clearTerminal()
-    print("---- Artistas Disponiveis ---- ")
+    print("---- Artistas Disponíveis ----")
     
-    artists.forEach { print($0.description) }}
+    Artists.sharedInstance.artistsAvaliable.forEach { print($0.description) }}
 
 func handleAllMusicsSearch() {
-    // mostrar todas as musicas
+    clearTerminal()
+    print("---- Músicas Disponíveis ----")
+    
+    Library.sharedInstance.songsAvaliable.forEach { print($0.description) }}
 }
 
 func handleListPurchases() {
