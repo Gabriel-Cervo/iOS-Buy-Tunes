@@ -19,12 +19,4 @@ struct Artists {
         
         throw ArtistErrorType.ArtistNotFound
     }
-    
-    mutating func addArtist(_ artist: Artist) {
-        let isArtistNotAvaliable = !artistsAvaliable.contains(where: { $0.name.lowercased() == artist.name.lowercased() })
-        
-        if (isArtistNotAvaliable) {
-            artistsAvaliable.append(artist)
-        }
-    }
 }

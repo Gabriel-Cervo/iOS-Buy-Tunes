@@ -15,8 +15,8 @@ struct Library {
     mutating func buyMusic(_ musicToBuy: String) throws {
         if let musicToBuyIndex = songsAvaliable.firstIndex(where: { $0.title.lowercased() == musicToBuy.lowercased() }) {
             let music = songsAvaliable[musicToBuyIndex]
-            songsAvaliable.remove(at: musicToBuyIndex)
             songsPurchased.append(music)
+            songsAvaliable.remove(at: musicToBuyIndex)
         } else {
             throw LibraryErrorType.MusicNotFound
         }
