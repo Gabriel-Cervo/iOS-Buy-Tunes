@@ -99,10 +99,9 @@ func handleSearchArtistByName() {
     let artistToSearch: String = readLine() ?? ""
     
     do {
-        let artist: Artist = try Artists.sharedInstance.getArtist(artistToSearch)
+        let artist: Artist = try Artists.sharedInstance.getArtist(withName: artistToSearch)
         
         clearTerminal()
-        print("Artista encontrado!!\n")
         print("---- Musicas de \(artist.name) ----")
         artist.listAllMusics()
         return
