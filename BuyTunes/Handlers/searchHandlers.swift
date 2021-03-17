@@ -129,7 +129,7 @@ func handleAllMusicsSearch() {
 }
 
 func handleListPurchases() {
-    let musicsPurchased = Library.sharedInstance.songsPurchased
+    let musicsPurchased: [Song] = Library.sharedInstance.songsPurchased
     
     clearTerminal()
     print("---- Suas músicas ---- ")
