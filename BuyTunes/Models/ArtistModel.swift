@@ -15,11 +15,6 @@ struct Artist: Printable {
     var description: String {
         return name
     }
-  
-    func listAllMusics() {
-        songs.forEach { print("\($0.description)\n") }
-    }
-    
     mutating func addSong(title: String, price: Double) {
         let newSong = Song(artist: self, title: title, price: price)
         songs.append(newSong)

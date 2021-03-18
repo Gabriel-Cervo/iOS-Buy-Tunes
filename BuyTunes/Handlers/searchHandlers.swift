@@ -97,10 +97,7 @@ func handleSearchArtistByName() {
     
     do {
         let artist: Artist = try Artists.sharedInstance.getArtist(withName: artistToSearch)
-        
-        clearTerminal()
-        print("---- Músicas de \(artist.name) ----")
-        artist.listAllMusics()
+        printAll(from: artist.songs, withTitle: "Músicas de \(artist.name)")
         return
     } catch ArtistErrorType.ArtistNotFound {
         handleArtistNotFound()
