@@ -37,7 +37,7 @@ func handleDataError(of error: Error) {
     if let error = error as? DataErrorType {
         if error == DataErrorType.saveError {
             print("Houve um erro ao salvar seus dados :(")
-        } else if error == DataErrorType.loadError {
+        } else {
             print("Houve um erro ao carregar os dados do programa, reinicie e tente novamente.")
         }
     } else {
