@@ -15,8 +15,4 @@ struct Artist: Printable, Codable {
     var description: String {
         return name
     }
-    mutating func addSong(title: String, price: Double) {
-        let newSong = Song(title: title, price: price)
-        songs.append(newSong)
-    }
 }
