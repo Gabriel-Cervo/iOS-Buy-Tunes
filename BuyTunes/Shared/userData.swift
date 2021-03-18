@@ -31,9 +31,12 @@ func loadData(key: String) throws -> [Song] {
 }
 
 func loadSongsFromJSON() throws {
-    guard let url = Bundle.main.url(forResource: "data", withExtension: "json") else {
+    let jsonDecoder = JSONDecoder()
+    guard let dataUrl = Bundle.main.url(forResource: "data", withExtension: "json") else {
         throw DataErrorType.jsonError
     }
+    let data = try! Data(contentsOf: dataUrl)
+    
 }
 
 func resetData() {
