@@ -102,22 +102,24 @@ func handleAllArtistsSearch() {
 }
 
 func handleAllMusicsSearch() {
-    printAll(from: Library.sharedInstance.songsAvaliable, withTitle: "Músicas Disponíveis")
+    printAllMusics(from: Library.sharedInstance.songsAvaliable, title: "---- Músicas Disponíveis ----")
 }
 
 func handleListPurchases() {
     let purchases: [Song] = Library.sharedInstance.songsPurchased
     
     if purchases.count > 0 {
-        printAll(from: purchases, withTitle: "Suas músicas")
+        printAllMusics(from: purchases, title: "---- Músicas Compradas ----")
     } else {
         clearTerminal()
         print("Você não possui nenhuma música :(")
     }
 }
 
-func printAll(from list: [Printable], withTitle title: String, description: String? = nil) {
-    clearTerminal()
+func printAll(from list: [Printable], withTitle title: String, description: String? = nil, cleaningTerminal: Bool? = true) {
+    if cleaningTerminal! {
+        clearTerminal()
+    }
     
     if let description = description {
         print(description)
@@ -125,4 +127,17 @@ func printAll(from list: [Printable], withTitle title: String, description: Stri
     
     print("---- \(title) ---- ")
     list.forEach { print("\($0.description)\n") }
+}
+
+func printAllMusics(from songList: [Song], title: String) {
+    clearTerminal()
+    print(title)
+    
+    Artists.sharedInstance.artistsAvaliable.forEach({ artist in
+        artist.songs.forEach({ song in
+            if songList.contains(where: { $0.title == song.title }) {
+                print("\(artist.description) | \(song.description)\n")
+            }
+        })
+    })
 }

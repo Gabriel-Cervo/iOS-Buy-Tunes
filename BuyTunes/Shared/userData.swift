@@ -36,7 +36,7 @@ func resetData() {
     userDefaults.removeObject(forKey: "avaliableMusics")
 }
 
-func loadSongs () {
+func loadArtists() {
     let exampleArtists: [Artist] = [
         Artist(
             name: "Los Hermanos",
@@ -104,6 +104,8 @@ func loadSongs () {
     ]
     
     Artists.sharedInstance.artistsAvaliable.append(contentsOf: exampleArtists)
-    
+}
+
+func insertSongsInLibrary() {
     Artists.sharedInstance.artistsAvaliable.map({ $0.songs }).forEach { Library.sharedInstance.songsAvaliable.append(contentsOf: $0) }
 }
