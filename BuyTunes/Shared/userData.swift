@@ -30,6 +30,12 @@ func loadData(key: String) throws -> [Song] {
     return [Song]()
 }
 
+func resetData() {
+    let userDefaults = UserDefaults.standard
+    userDefaults.removeObject(forKey: "userMusics")
+    userDefaults.removeObject(forKey: "avaliableMusics")
+}
+
 func loadSongs () {
     let exampleArtists: [Artist] = [
         Artist(
@@ -100,10 +106,4 @@ func loadSongs () {
     Artists.sharedInstance.artistsAvaliable.append(contentsOf: exampleArtists)
     
     Artists.sharedInstance.artistsAvaliable.map({ $0.songs }).forEach { Library.sharedInstance.songsAvaliable.append(contentsOf: $0) }
-}
-
-func resetData() {
-    let userDefaults = UserDefaults.standard
-    userDefaults.removeObject(forKey: "userMusics")
-    userDefaults.removeObject(forKey: "avaliableMusics")
 }
