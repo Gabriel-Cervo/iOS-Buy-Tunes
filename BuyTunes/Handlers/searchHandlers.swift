@@ -37,22 +37,22 @@ func handleSearch() throws {
         print("\nComo deseja procurar sua música?")
         
         var optionIndex: Int = 0
-
+        
         for option in SearchChoices.allCases {
             let optionWithoutUnderlines: String = option.rawValue.removeUnderlines()
             print("\(optionIndex): \(optionWithoutUnderlines)")
             optionIndex += 1
         }
-                
+        
         let optionNumber = handleReadLine()
         
         do {
             let optionInEnum: SearchChoices = try SearchChoices.init(choiceNumber: optionNumber)
             
             switch optionInEnum {
-                case .Voltar: return clearTerminal()
-                case .Por_Artistas: handleArtistSearch()
-                case .Ver_Todas: handleAllMusicsSearch()
+            case .Voltar: return clearTerminal()
+            case .Por_Artistas: handleArtistSearch()
+            case .Ver_Todas: handleAllMusicsSearch()
             }
             
         } catch MenuErrorType.invalidOption {
@@ -62,7 +62,33 @@ func handleSearch() throws {
 }
 
 func handleArtistSearch() {
-    printOption("Artistas Disponíveis", from: Artists.sharedInstance.artistsAvaliable)
+    clearTerminal()
+
+    print("\nInforme o nome do artista que você deseja encontrar: ")
+    
+    let artistToBeSearched: String = readLine() ?? ""
+    
+    clearTerminal()
+    
+    do {
+        let artistFound: Artist = try Artists.sharedInstance.getArtist(artistToBeSearched)
+        
+        print("==== \(artistFound.name) ====")
+        
+        print("\n\(artistFound.about)")
+        
+        print("\nMúsicas de \(artistFound.name) disponíveis: \n")
+        
+        artistFound.songs.forEach { song in print(song.description) }
+        
+    } catch ArtistErrorType.ArtistNotFound {
+        handleArtistNotFound()
+        
+    } catch {
+        handleGeneralError(of: error)
+    }
+    
+    //printOption("Artistas Disponíveis", from: Artists.sharedInstance.artistsAvaliable)
 }
 
 func handleAllMusicsSearch() {
@@ -70,7 +96,14 @@ func handleAllMusicsSearch() {
 }
 
 func handleListPurchases() {
-    printOption("Suas músicas", from: Library.sharedInstance.songsPurchased)
+    let purchases = Library.sharedInstance.songsPurchased
+    
+    if purchases.count > 0 {
+        return printOption("Suas músicas", from: purchases)
+    }
+    
+    clearTerminal()
+    print("Você ainda não possui nenhuma música comprada :(")
 }
 
 func printOption (_ title: String, from list: [Printable]) {
