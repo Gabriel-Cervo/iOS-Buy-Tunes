@@ -15,13 +15,13 @@ struct Artist: Printable {
     var description: String {
         return name
     }
-    
+  
     func listAllMusics() {
         songs.forEach { print($0.description) }
     }
     
-    mutating func addSong(title: String, releaseDate: Date, price: Double) {
-        let newSong = Song(artist: self, title: title, releaseDate: releaseDate, price: price)
+    mutating func addSong(title: String, price: Double) {
+        let newSong = Song(artist: self, title: title, price: price)
         songs.append(newSong)
     }
 }
