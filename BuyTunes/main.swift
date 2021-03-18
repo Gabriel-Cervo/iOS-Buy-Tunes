@@ -7,6 +7,8 @@
 
 import Foundation
 
-Artists.sharedInstance.loadSongs()
+if Library.sharedInstance.songsAvaliable.count == 0 {
+    loadSongs()
+}
 
 showMenu()

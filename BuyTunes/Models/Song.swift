@@ -7,10 +7,10 @@
 
 import Foundation
 
-struct Song: Printable {
+struct Song: Printable, Codable {
     let artist: Artist
     let title: String
-    let releaseDate: Date = getRandomDate()
+    var releaseDate: Date = getRandomDate()
     let price: Double
     
     var description: String {
