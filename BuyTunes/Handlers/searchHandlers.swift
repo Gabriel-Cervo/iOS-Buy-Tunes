@@ -89,8 +89,8 @@ func handleSearchArtistByName() {
     
     do {
         let artist: Artist = try Artists.sharedInstance.getArtist(withName: artistToSearch)
-        let description: String = "\n=== \(artist.name) ===\n\n\(artist.about)\n"
-        printAll(from: artist.songs, withTitle: "Músicas de \(artist.name)", description: description)
+        
+        printArtistInfo(artist)
         return
     } catch {
         handleError(of: error)
@@ -114,30 +114,4 @@ func handleListPurchases() {
         clearTerminal()
         print("Você não possui nenhuma música :(")
     }
-}
-
-func printAll(from list: [Printable], withTitle title: String, description: String? = nil, cleaningTerminal: Bool? = true) {
-    if cleaningTerminal! {
-        clearTerminal()
-    }
-    
-    if let description = description {
-        print(description)
-    }
-    
-    print("---- \(title) ---- ")
-    list.forEach { print("\($0.description)\n") }
-}
-
-func printAllMusics(from songList: [Song], title: String) {
-    clearTerminal()
-    print(title)
-    
-    Artists.sharedInstance.artistsAvaliable.forEach({ artist in
-        artist.songs.forEach({ song in
-            if songList.contains(where: { $0.title == song.title }) {
-                print("\(artist.description) | \(song.description)\n")
-            }
-        })
-    })
 }

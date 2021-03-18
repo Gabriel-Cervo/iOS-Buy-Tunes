@@ -9,11 +9,12 @@
 /* Begin PBXBuildFile section */
 		84B6DBFB2603C62500972590 /* userData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B6DBFA2603C62500972590 /* userData.swift */; };
 		84B6DBFF2603C76700972590 /* DataErrorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B6DBFE2603C76700972590 /* DataErrorType.swift */; };
+		84B6DC202603EC7F00972590 /* printFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B6DC1F2603EC7F00972590 /* printFunctions.swift */; };
 		84B9444D26027F1400D40A39 /* Library.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B9444C26027F1400D40A39 /* Library.swift */; };
 		84B94452260282D700D40A39 /* LibraryErrorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B94451260282D700D40A39 /* LibraryErrorType.swift */; };
 		84B9445A26028A7300D40A39 /* Artists.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B9445926028A7300D40A39 /* Artists.swift */; };
 		84B9445D26028C5700D40A39 /* ArtistErrorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B9445C26028C5700D40A39 /* ArtistErrorType.swift */; };
-		84C0DBAA2601390A00E76591 /* functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C0DBA92601390A00E76591 /* functions.swift */; };
+		84C0DBAA2601390A00E76591 /* menuFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C0DBA92601390A00E76591 /* menuFunctions.swift */; };
 		84C0DBAF2601395900E76591 /* choicesEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C0DBAE2601395900E76591 /* choicesEnum.swift */; };
 		84C0DBB526013A4300E76591 /* MenuErrorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C0DBB426013A4300E76591 /* MenuErrorType.swift */; };
 		84C0DBBA2601417400E76591 /* clearTerminal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C0DBB92601417400E76591 /* clearTerminal.swift */; };
@@ -43,11 +44,12 @@
 /* Begin PBXFileReference section */
 		84B6DBFA2603C62500972590 /* userData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userData.swift; sourceTree = "<group>"; };
 		84B6DBFE2603C76700972590 /* DataErrorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataErrorType.swift; sourceTree = "<group>"; };
+		84B6DC1F2603EC7F00972590 /* printFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = printFunctions.swift; sourceTree = "<group>"; };
 		84B9444C26027F1400D40A39 /* Library.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Library.swift; sourceTree = "<group>"; };
 		84B94451260282D700D40A39 /* LibraryErrorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryErrorType.swift; sourceTree = "<group>"; };
 		84B9445926028A7300D40A39 /* Artists.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artists.swift; sourceTree = "<group>"; };
 		84B9445C26028C5700D40A39 /* ArtistErrorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistErrorType.swift; sourceTree = "<group>"; };
-		84C0DBA92601390A00E76591 /* functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = functions.swift; sourceTree = "<group>"; };
+		84C0DBA92601390A00E76591 /* menuFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = menuFunctions.swift; sourceTree = "<group>"; };
 		84C0DBAE2601395900E76591 /* choicesEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = choicesEnum.swift; sourceTree = "<group>"; };
 		84C0DBB426013A4300E76591 /* MenuErrorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuErrorType.swift; sourceTree = "<group>"; };
 		84C0DBB92601417400E76591 /* clearTerminal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = clearTerminal.swift; sourceTree = "<group>"; };
@@ -88,8 +90,9 @@
 		84C0DBAC2601391A00E76591 /* Menu */ = {
 			isa = PBXGroup;
 			children = (
-				84C0DBA92601390A00E76591 /* functions.swift */,
+				84C0DBA92601390A00E76591 /* menuFunctions.swift */,
 				84C0DBAE2601395900E76591 /* choicesEnum.swift */,
+				84B6DC1F2603EC7F00972590 /* printFunctions.swift */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -230,7 +233,7 @@
 				84B9445D26028C5700D40A39 /* ArtistErrorType.swift in Sources */,
 				84C0DBC72601528E00E76591 /* errorHandlers.swift in Sources */,
 				84B94452260282D700D40A39 /* LibraryErrorType.swift in Sources */,
-				84C0DBAA2601390A00E76591 /* functions.swift in Sources */,
+				84C0DBAA2601390A00E76591 /* menuFunctions.swift in Sources */,
 				84C0DBAF2601395900E76591 /* choicesEnum.swift in Sources */,
 				892A09D02602C0FB00FCD289 /* readLine.swift in Sources */,
 				84B9444D26027F1400D40A39 /* Library.swift in Sources */,
@@ -238,6 +241,7 @@
 				84B6DBFF2603C76700972590 /* DataErrorType.swift in Sources */,
 				890FC56A26012D9700D291D8 /* main.swift in Sources */,
 				892A09C9260293A100FCD289 /* getRandomDate.swift in Sources */,
+				84B6DC202603EC7F00972590 /* printFunctions.swift in Sources */,
 				84C0DBC02601460E00E76591 /* searchHandlers.swift in Sources */,
 				84C0DBBA2601417400E76591 /* clearTerminal.swift in Sources */,
 			);
