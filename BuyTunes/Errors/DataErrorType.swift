@@ -9,4 +9,5 @@ import Foundation
 
 enum DataErrorType: Error {
     case saveError
+    case loadError
 }

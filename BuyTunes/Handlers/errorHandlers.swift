@@ -33,5 +33,10 @@ func handleArtistNotFound() {
 
 func handleDataError(of error: Error) {
     clearTerminal()
-    print("AAAAA")
+    
+    if error == DataErrorType.saveError {
+        print("Houve um erro ao salvar seus dados :(")
+    } else if error == DataErrorType.loadError {
+        print("Houve um erro ao carregar os dados do programa, reinicie e tente novamente.")
+    }
 }
