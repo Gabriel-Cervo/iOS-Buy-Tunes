@@ -8,7 +8,6 @@
 import Foundation
 
 struct Song: Printable, Codable {
-    let artist: Artist
     let title: String
     var releaseDate: Date = getRandomDate()
     let price: Double
@@ -21,6 +20,6 @@ struct Song: Printable, Codable {
         numberFormatter.numberStyle = .currency
                 
         let priceCurrency = numberFormatter.string(from: NSNumber(value: price))!
-        return "'\(title)' por \(artist.name) - Publicada em: \(dateFormatter.string(from: releaseDate)) - \(priceCurrency)"
+        return "'\(title)' - Publicada em: \(dateFormatter.string(from: releaseDate)) - \(priceCurrency)"
     }
 }
