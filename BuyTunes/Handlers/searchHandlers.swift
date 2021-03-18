@@ -9,21 +9,17 @@ import Foundation
 
 func handleBuy() {
     clearTerminal()
-    
     print("Você deseja comprar uma música? Que ótimo!!!\n")
     print("Digite o nome da música que deseja comprar:")
     
     let songToBePurchased: String = readLine() ?? ""
-    
     do {
         try Library.sharedInstance.buyMusic(songToBePurchased)
         
         clearTerminal()
-        
         print("Você comprou '\(songToBePurchased)' com sucesso!")
     } catch LibraryErrorType.MusicNotFound {
         handleInvalidMusic()
-        
     } catch {
         handleGeneralError(of: error)
     }
@@ -48,32 +44,17 @@ func handleSearch() {
             let optionInEnum: SearchChoices = try SearchChoices.init(choiceNumber: optionNumber)
             
             switch optionInEnum {
-            case .Voltar: 
-                clearTerminal()
-                return 
             case .Por_Artistas: handleArtistSearch()
             case .Ver_Todas: handleAllMusicsSearch()
+            case .Voltar:
+                clearTerminal()
+                return
             }
-            
         } catch MenuErrorType.invalidOption {
             handleInvalidOption()
         } catch {
             handleGeneralError(of: error)
         }
-    }
-}
-
-func handleAllMusicsSearch() {
-    printOption("Músicas Disponíveis", from: Library.sharedInstance.songsAvaliable)
-}
-
-func handleListPurchases() {
-    let purchases: [Song] = Library.sharedInstance.songsPurchased
-    
-    if purchases.count > 0 {
-        printOption("Suas músicas", from: purchases)
-    } else {
-        print("Você não possui nenhuma música :(")
     }
 }
 
@@ -93,13 +74,13 @@ func handleArtistSearch() {
         let optionNumber = handleReadLine()
         do {
             let optionInEnum: ArtistSearchChoices = try ArtistSearchChoices.init(choiceNumber: optionNumber)
-            
-          switch optionInEnum {
+        
+            switch optionInEnum {
+            case .Por_Nome: handleSearchArtistByName()
+            case .Ver_Todos: handleAllArtistsSearch()
             case .Voltar:
                 clearTerminal()
                 return
-            case .Por_Nome: handleSearchArtistByName()
-            case .Ver_Todos: handleAllArtistsSearch()
             }
         } catch MenuErrorType.invalidOption {
             handleInvalidOption()
@@ -111,7 +92,6 @@ func handleArtistSearch() {
 
 func handleSearchArtistByName() {
     clearTerminal()
-    
     print("Qual o nome do artista que deseja procurar?")
     let artistToSearch: String = readLine() ?? ""
     
@@ -119,7 +99,7 @@ func handleSearchArtistByName() {
         let artist: Artist = try Artists.sharedInstance.getArtist(withName: artistToSearch)
         
         clearTerminal()
-        print("---- Musicas de \(artist.name) ----")
+        print("---- Músicas de \(artist.name) ----")
         artist.listAllMusics()
         return
     } catch ArtistErrorType.ArtistNotFound {
@@ -130,17 +110,26 @@ func handleSearchArtistByName() {
 }
 
 func handleAllArtistsSearch() {
-    clearTerminal()
-    
-    print("---- Artistas Disponíveis ----")
-    
-    Artists.sharedInstance.artistsAvaliable.forEach { print($0.description) }
+    printAll(from: Artists.sharedInstance.artistsAvaliable, withTitle: "Artistas Disponíveis")
 }
 
-func printOption(_ title: String, from list: [Printable]) {
+func handleAllMusicsSearch() {
+    printAll(from: Library.sharedInstance.songsAvaliable, withTitle: "Músicas Disponíveis")
+}
+
+func handleListPurchases() {
+    let purchases: [Song] = Library.sharedInstance.songsPurchased
+    
+    if purchases.count > 0 {
+        printAll(from: purchases, withTitle: "Suas músicas")
+    } else {
+        clearTerminal()
+        print("Você não possui nenhuma música :(")
+    }
+}
+
+func printAll(from list: [Printable], withTitle title: String) {
     clearTerminal()
-    
     print("---- \(title) ---- ")
-    
     list.forEach { print("\($0.description)\n") }
 }
