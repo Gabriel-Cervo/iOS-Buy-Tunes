@@ -91,7 +91,8 @@ func handleSearchArtistByName() {
     
     do {
         let artist: Artist = try Artists.sharedInstance.getArtist(withName: artistToSearch)
-        printAll(from: artist.songs, withTitle: "Músicas de \(artist.name)")
+        let description: String = "\n=== \(artist.name) ===\n\n\(artist.about)\n"
+        printAll(from: artist.songs, withTitle: "Músicas de \(artist.name)", description: description)
         return
     } catch {
         handleError(of: error)
@@ -117,8 +118,13 @@ func handleListPurchases() {
     }
 }
 
-func printAll(from list: [Printable], withTitle title: String) {
+func printAll(from list: [Printable], withTitle title: String, description: String? = nil) {
     clearTerminal()
+    
+    if let description = description {
+        print(description)
+    }
+    
     print("---- \(title) ---- ")
     list.forEach { print("\($0.description)\n") }
 }
