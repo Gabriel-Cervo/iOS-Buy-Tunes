@@ -64,7 +64,7 @@ func handleSearch() {
 }
 
 func handleAllMusicsSearch() {
-    printOption("---- Músicas Disponíveis ----", from: Library.sharedInstance.songsAvaliable)
+    printOption("Músicas Disponíveis", from: Library.sharedInstance.songsAvaliable)
 }
 
 func handleListPurchases() {
@@ -110,6 +110,8 @@ func handleArtistSearch() {
 }
 
 func handleSearchArtistByName() {
+    clearTerminal()
+    
     print("Qual o nome do artista que deseja procurar?")
     let artistToSearch: String = readLine() ?? ""
     
@@ -140,5 +142,5 @@ func printOption(_ title: String, from list: [Printable]) {
     
     print("---- \(title) ---- ")
     
-    list.forEach { print($0.description) }
+    list.forEach { print("\($0.description)\n") }
 }

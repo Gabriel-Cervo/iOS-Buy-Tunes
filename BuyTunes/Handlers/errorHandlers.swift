@@ -24,8 +24,3 @@ func handleArtistNotFound() {
 func handleGeneralError(of error: Error) {
     print("[ERROR]: \(error.localizedDescription)")
 }
-
-func handleArtistNotFound() {
-    clearTerminal()
-    print("O artista que você informou não está disponível ou não existe.")
-}

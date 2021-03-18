@@ -17,7 +17,7 @@ struct Artist: Printable {
     }
   
     func listAllMusics() {
-        songs.forEach { print($0.description) }
+        songs.forEach { print("\($0.description)\n") }
     }
     
     mutating func addSong(title: String, price: Double) {
