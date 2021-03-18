@@ -10,8 +10,20 @@ import Foundation
 struct Library {
     static var sharedInstance = Library()
     
-    var songsAvaliable: [Song] = loadData(key: "avaliableMusics")
-    var songsPurchased: [Song] = loadData(key: "userMusics")
+    var songsAvaliable: [Song]
+    var songsPurchased: [Song]
+    
+    init() {
+        do {
+            songsAvaliable = try loadData(key: "avaliableMusics")
+            songsPurchased = try loadData(key: "userMusics")
+        } catch {
+            handleDataError(of: error)
+            songsAvaliable = [Song]()
+            songsPurchased = [Song]()
+        }
+        
+    }
     
     mutating func buyMusic(_ musicToBuy: String) throws {
         if let musicToBuyIndex = songsAvaliable.firstIndex(where: { $0.title.lowercased() == musicToBuy.lowercased() }) {

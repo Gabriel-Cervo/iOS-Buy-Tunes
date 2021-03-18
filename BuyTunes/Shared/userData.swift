@@ -17,12 +17,12 @@ func saveData<T: Encodable>(key: String, data: T) throws {
     }
 }
 
-func loadData(key: String) -> [Song] {
+func loadData(key: String) throws -> [Song] {
     let userDefaults = UserDefaults.standard
     if let userData = userDefaults.data(forKey: key) {
         let jsonDecoder = JSONDecoder()
         guard let decodedData = try? jsonDecoder.decode([Song].self, from: userData) else {
-            fatalError("Error while decoding data")
+            throw DataErrorType.loadError
         }
         return decodedData
     }
