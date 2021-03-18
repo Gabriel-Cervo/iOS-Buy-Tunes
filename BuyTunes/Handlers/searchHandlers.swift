@@ -20,8 +20,7 @@ func handleBuy() {
         
         clearTerminal()
         
-        print("Compra realizada com sucesso!")
-        
+        print("Você comprou '\(songToBePurchased)' com sucesso!")
     } catch LibraryErrorType.MusicNotFound {
         handleInvalidMusic()
         
@@ -30,7 +29,7 @@ func handleBuy() {
     }
 }
 
-func handleSearch() throws {
+func handleSearch() {
     clearTerminal()
     
     while true {
@@ -45,71 +44,101 @@ func handleSearch() throws {
         }
         
         let optionNumber = handleReadLine()
-        
         do {
             let optionInEnum: SearchChoices = try SearchChoices.init(choiceNumber: optionNumber)
             
             switch optionInEnum {
-            case .Voltar: return clearTerminal()
+            case .Voltar: 
+                clearTerminal()
+                return 
             case .Por_Artistas: handleArtistSearch()
             case .Ver_Todas: handleAllMusicsSearch()
             }
             
         } catch MenuErrorType.invalidOption {
             handleInvalidOption()
+        } catch {
+            handleGeneralError(of: error)
         }
+    }
+}
+
+func handleAllMusicsSearch() {
+    printOption("---- Músicas Disponíveis ----", from: Library.sharedInstance.songsAvaliable)
+}
+
+func handleListPurchases() {
+    let purchases: [Song] = Library.sharedInstance.songsPurchased
+    
+    if purchases.count > 0 {
+        printOption("Suas músicas", from: purchases)
+    } else {
+        print("Você não possui nenhuma música :(")
     }
 }
 
 func handleArtistSearch() {
     clearTerminal()
+  
+    while true {
+        print("\nComo deseja procurar seu artista?")
+        
+        var optionIndex: Int = 0
+        for option in ArtistSearchChoices.allCases {
+            let optionWithoutUnderlines: String = option.rawValue.removeUnderlines()
+            print("\(optionIndex): \(optionWithoutUnderlines)")
+            optionIndex += 1
+        }
+        
+        let optionNumber = handleReadLine()
+        do {
+            let optionInEnum: ArtistSearchChoices = try ArtistSearchChoices.init(choiceNumber: optionNumber)
+            
+          switch optionInEnum {
+            case .Voltar:
+                clearTerminal()
+                return
+            case .Por_Nome: handleSearchArtistByName()
+            case .Ver_Todos: handleAllArtistsSearch()
+            }
+        } catch MenuErrorType.invalidOption {
+            handleInvalidOption()
+        } catch {
+            handleGeneralError(of: error)
+        }
+    }
+}
 
-    print("\nInforme o nome do artista que você deseja encontrar: ")
-    
-    let artistToBeSearched: String = readLine() ?? ""
-    
-    clearTerminal()
+func handleSearchArtistByName() {
+    print("Qual o nome do artista que deseja procurar?")
+    let artistToSearch: String = readLine() ?? ""
     
     do {
-        let artistFound: Artist = try Artists.sharedInstance.getArtist(artistToBeSearched)
+        let artist: Artist = try Artists.sharedInstance.getArtist(withName: artistToSearch)
         
-        print("==== \(artistFound.name) ====")
-        
-        print("\n\(artistFound.about)")
-        
-        print("\nMúsicas de \(artistFound.name) disponíveis: \n")
-        
-        artistFound.songs.forEach { song in print(song.description) }
-        
+        clearTerminal()
+        print("---- Musicas de \(artist.name) ----")
+        artist.listAllMusics()
+        return
     } catch ArtistErrorType.ArtistNotFound {
         handleArtistNotFound()
-        
     } catch {
         handleGeneralError(of: error)
     }
-    
-    //printOption("Artistas Disponíveis", from: Artists.sharedInstance.artistsAvaliable)
 }
 
-func handleAllMusicsSearch() {
-    printOption("Músicas Disponíveis", from: Library.sharedInstance.songsAvaliable)
-}
-
-func handleListPurchases() {
-    let purchases = Library.sharedInstance.songsPurchased
-    
-    if purchases.count > 0 {
-        return printOption("Suas músicas", from: purchases)
-    }
-    
+func handleAllArtistsSearch() {
     clearTerminal()
-    print("Você ainda não possui nenhuma música comprada :(")
+    
+    print("---- Artistas Disponíveis ----")
+    
+    Artists.sharedInstance.artistsAvaliable.forEach { print($0.description) }
 }
 
-func printOption (_ title: String, from list: [Printable]) {
+func printOption(_ title: String, from list: [Printable]) {
     clearTerminal()
     
     print("---- \(title) ---- ")
     
-    list.forEach { item in print(item.description) }
+    list.forEach { print($0.description) }
 }

@@ -16,6 +16,11 @@ func handleInvalidMusic() {
     print("\nA música que você digitou não existe ou você já tem ela na sua galeria!")
 }
 
+func handleArtistNotFound() {
+    clearTerminal()
+    print("\nO artista que você digitou não existe ou não está no nosso sistema :(")
+}
+
 func handleGeneralError(of error: Error) {
     print("[ERROR]: \(error.localizedDescription)")
 }

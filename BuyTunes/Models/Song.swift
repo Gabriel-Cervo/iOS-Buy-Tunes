@@ -21,6 +21,6 @@ struct Song: Printable {
         numberFormatter.numberStyle = .currency
                 
         let priceCurrency = numberFormatter.string(from: NSNumber(value: price))!
-        return "\(title) por \(artist.name) - Publicada em: \(dateFormatter.string(from: releaseDate)) - \(priceCurrency)"
+        return "'\(title)' por \(artist.name) - Publicada em: \(dateFormatter.string(from: releaseDate)) - \(priceCurrency)"
     }
 }

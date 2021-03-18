@@ -30,7 +30,8 @@ func showMenu() {
             
             if optionInEnum == MenuChoices.Sair {
                 clearTerminal()
-                return print("Obrigado por usar a BuyTunes!\n\nVolte sempre!\n")
+                print("Obrigado por usar a BuyTunes!\n\nVolte sempre!\n")
+                return 
             }
             
             try selectMenuChoice(optionInEnum)
@@ -47,9 +48,8 @@ func showMenu() {
 func selectMenuChoice(_ selectedOption: MenuChoices) throws {
     switch selectedOption {
         case .Comprar: handleBuy()
-        case .Procurar: try handleSearch()
+        case .Procurar: handleSearch()
         case .Listar_Compras: handleListPurchases()
         default: throw MenuErrorType.invalidOption
     }
 }
-

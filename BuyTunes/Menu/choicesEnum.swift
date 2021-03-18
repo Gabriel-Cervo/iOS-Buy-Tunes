@@ -47,3 +47,22 @@ enum SearchChoices: String, CaseIterable {
         }
     }
 }
+
+enum ArtistSearchChoices: String, CaseIterable {
+    case Voltar
+    case Por_Nome
+    case Ver_Todos
+    
+    init(choiceNumber: Int) throws {
+        switch choiceNumber {
+        case 0:
+            self = .Voltar
+        case 1:
+            self = .Por_Nome
+        case 2:
+            self = .Ver_Todos
+        default:
+            throw MenuErrorType.invalidOption
+        }
+    }
+}

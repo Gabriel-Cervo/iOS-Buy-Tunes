@@ -10,10 +10,14 @@ import Foundation
 struct Artist: Printable {    
     let name: String
     let about: String
-    var songs: Array<Song> = [Song]()
+    var songs: [Song] = [Song]()
     
     var description: String {
         return name
+    }
+  
+    func listAllMusics() {
+        songs.forEach { print($0.description) }
     }
     
     mutating func addSong(title: String, price: Double) {
