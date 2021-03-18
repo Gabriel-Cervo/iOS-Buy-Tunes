@@ -8,7 +8,11 @@
 import Foundation
 
 if Library.sharedInstance.songsAvaliable.count == 0 {
-    loadSongs()
+    do {
+        try loadSongsFromJSON()
+    } catch {
+        handleError(of: error)
+    }
 }
 
 showMenu()

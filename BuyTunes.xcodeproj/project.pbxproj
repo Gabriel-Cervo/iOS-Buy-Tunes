@@ -43,7 +43,7 @@
 /* Begin PBXFileReference section */
 		84B6DBFA2603C62500972590 /* userData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userData.swift; sourceTree = "<group>"; };
 		84B6DBFE2603C76700972590 /* DataErrorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataErrorType.swift; sourceTree = "<group>"; };
-		84B6DC042603D47E00972590 /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
+		84B6DC192603D9FE00972590 /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
 		84B9444C26027F1400D40A39 /* Library.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Library.swift; sourceTree = "<group>"; };
 		84B94451260282D700D40A39 /* LibraryErrorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryErrorType.swift; sourceTree = "<group>"; };
 		84B9445926028A7300D40A39 /* Artists.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artists.swift; sourceTree = "<group>"; };
@@ -78,7 +78,7 @@
 		84B6DC032603D47300972590 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				84B6DC042603D47E00972590 /* data.json */,
+				84B6DC192603D9FE00972590 /* data.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";

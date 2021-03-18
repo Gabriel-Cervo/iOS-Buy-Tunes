@@ -32,10 +32,17 @@ func loadData(key: String) throws -> [Song] {
 
 func loadSongsFromJSON() throws {
     let jsonDecoder = JSONDecoder()
+    
     guard let dataUrl = Bundle.main.url(forResource: "data", withExtension: "json") else {
-        throw DataErrorType.jsonError
+        fatalError("ERRO AO PEGAR URL")
     }
     let data = try! Data(contentsOf: dataUrl)
+    
+    if let decodedData = try? jsonDecoder.decode([Artist].self, from: data) {
+        Artists.sharedInstance.artistsAvaliable = decodedData
+        
+        decodedData.map({ $0.songs }).forEach { Library.sharedInstance.songsAvaliable.append(contentsOf: $0) }
+    }
     
 }
 

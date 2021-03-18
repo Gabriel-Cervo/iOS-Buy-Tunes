@@ -10,7 +10,7 @@ import Foundation
 struct Artist: Printable, Codable {    
     let name: String
     let about: String
-    var songs: [Song] = [Song]()
+    var songs: [Song]
     
     var description: String {
         return name
