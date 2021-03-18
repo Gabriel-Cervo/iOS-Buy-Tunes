@@ -12,6 +12,7 @@ func handleError(of error: Error) {
     case is MenuErrorType.Type: handleInvalidOption()
     case is LibraryErrorType.Type: handleInvalidMusic()
     case is ArtistErrorType.Type: handleArtistNotFound()
+    case is DataErrorType.Type: handleDataError(of: error)
     default: print("[ERROR]: \(error.localizedDescription)")
     }
 }
@@ -28,4 +29,9 @@ func handleInvalidMusic() {
 func handleArtistNotFound() {
     clearTerminal()
     print("\nO artista que você digitou não existe ou não está no nosso sistema :(")
+}
+
+func handleDataError(of error: Error) {
+    clearTerminal()
+    print("AAAAA")
 }

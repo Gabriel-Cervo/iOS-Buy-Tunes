@@ -15,7 +15,8 @@ func handleBuy() {
     let songToBePurchased: String = readLine() ?? ""
     do {
         try Library.sharedInstance.buyMusic(songToBePurchased)
-        
+        try saveData(key: "userMusics", data: Library.sharedInstance.songsPurchased)
+        try saveData(key: "avaliableMusics", data: Library.sharedInstance.songsAvaliable)
         clearTerminal()
         print("Você comprou '\(songToBePurchased)' com sucesso!")
     } catch {
@@ -44,9 +45,7 @@ func handleSearch() {
             switch optionInEnum {
             case .Por_Artistas: handleArtistSearch()
             case .Ver_Todas: handleAllMusicsSearch()
-            case .Voltar:
-                clearTerminal()
-                return
+            case .Voltar: return clearTerminal()
             }
         } catch {
             handleError(of: error)
@@ -74,9 +73,8 @@ func handleArtistSearch() {
             switch optionInEnum {
             case .Por_Nome: handleSearchArtistByName()
             case .Ver_Todos: handleAllArtistsSearch()
-            case .Voltar:
-                clearTerminal()
-                return
+            case .Voltar: return clearTerminal()
+                
             }
         } catch {
             handleError(of: error)
