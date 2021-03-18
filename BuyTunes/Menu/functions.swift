@@ -35,12 +35,8 @@ func showMenu() {
             }
             
             try selectMenuChoice(optionInEnum)
-            
-        } catch MenuErrorType.invalidOption {
-            handleInvalidOption()
-            
         } catch {
-            handleGeneralError(of: error)
+            handleError(of: error)
         }
     }
 }

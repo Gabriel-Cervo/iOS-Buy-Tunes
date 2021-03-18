@@ -21,6 +21,11 @@ func handleArtistNotFound() {
     print("\nO artista que você digitou não existe ou não está no nosso sistema :(")
 }
 
-func handleGeneralError(of error: Error) {
-    print("[ERROR]: \(error.localizedDescription)")
+func handleError(of error: Error) {
+    switch type(of: error) {
+    case is MenuErrorType.Type: handleInvalidOption()
+    case is LibraryErrorType.Type: handleInvalidMusic()
+    case is ArtistErrorType.Type: handleArtistNotFound()
+    default: print("[ERROR]: \(error.localizedDescription)")
+    }
 }

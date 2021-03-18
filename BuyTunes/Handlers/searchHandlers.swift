@@ -18,10 +18,8 @@ func handleBuy() {
         
         clearTerminal()
         print("Você comprou '\(songToBePurchased)' com sucesso!")
-    } catch LibraryErrorType.MusicNotFound {
-        handleInvalidMusic()
     } catch {
-        handleGeneralError(of: error)
+        handleError(of: error)
     }
 }
 
@@ -50,10 +48,8 @@ func handleSearch() {
                 clearTerminal()
                 return
             }
-        } catch MenuErrorType.invalidOption {
-            handleInvalidOption()
         } catch {
-            handleGeneralError(of: error)
+            handleError(of: error)
         }
     }
 }
@@ -82,10 +78,8 @@ func handleArtistSearch() {
                 clearTerminal()
                 return
             }
-        } catch MenuErrorType.invalidOption {
-            handleInvalidOption()
         } catch {
-            handleGeneralError(of: error)
+            handleError(of: error)
         }
     }
 }
@@ -99,10 +93,8 @@ func handleSearchArtistByName() {
         let artist: Artist = try Artists.sharedInstance.getArtist(withName: artistToSearch)
         printAll(from: artist.songs, withTitle: "Músicas de \(artist.name)")
         return
-    } catch ArtistErrorType.ArtistNotFound {
-        handleArtistNotFound()
     } catch {
-        handleGeneralError(of: error)
+        handleError(of: error)
     }
 }
 
